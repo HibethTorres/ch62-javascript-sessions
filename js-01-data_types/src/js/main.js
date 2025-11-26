@@ -31,4 +31,17 @@ const currentNationality = "Mexican";
 // "My name is Daniel, I am 24 years old and I am Mexican."
 
 console.log(`My name is ${firstName}, I am ${currentAge} years old and I am ${currentNationality}.`);
+//Ventaja de usar template literals: podemos hacer saltos de linea sin usar \n que se refleja en consola
+// \n se usa para saltos de linea en strings normales
 
+
+/* ================================================================
+   3. DATOS PRIMITIVOS: NUMBER Y BIGINT 
+   ================================================================
+   JavaScript tiene un solo tipo para enteros y decimales: 'number'.
+   Number: Tipo de dato numérico de 64 bits para representar valores enteros, punto flotante, +Infinity, -Infinity, NaN
+*/
+
+const gravityEarth = 9.81; // Aceleracion debida a la gravedad en m/s² - Float
+
+console.log(typeof gravityEarth); // Muestra el tipo de dato de la variable gravityEarth - 'number'
