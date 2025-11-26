@@ -45,3 +45,34 @@ console.log(`My name is ${firstName}, I am ${currentAge} years old and I am ${cu
 const gravityEarth = 9.81; // Aceleracion debida a la gravedad en m/s² - Float
 
 console.log(typeof gravityEarth); // Muestra el tipo de dato de la variable gravityEarth - 'number'
+
+/*
+Tipos de datos number.
+
+- numeros positivos: 100, 1, 0.258
+- numeros negativos: -1, -50.35
+- valores que no pueden ser representados numericamente: NaN, sigue siendo un dato tipo 'number'
+  /Un NaN lo quiero comparar con otro NaN nunca van a ser iguales/
+- numero infinitos: +Infinity, -Infinity
+*/
+
+console.log( typeof 3.141592 ); // 'number'
+console.log( typeof (3*3)  ); // 'number'
+console.log( typeof "" ); // 'string'
+console.log( typeof " " ); // 'string'
+console.log( 3*"pitufo trabajador" ); // NaN
+console.log( typeof ( 3 * "pitufo trabajador") ); // number
+console.log( typeof (NaN) ); // 'number'
+console.log( typeof +Infinity ); // 'number'
+console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
+console.log( typeof ( "3Viernes temático" ) ); // 'string'
+console.log( 4 / 0 ); // +Infinity
+console.log( typeof (4 / 0) ); // number
+console.log( "4" * "2"); // 8
+console.log( typeof ("4" * "2") ); // 'number'
+console.log( typeof (8) ); // 'number'
+
+console.log( typeof "4" * "2" ); // NaN
+console.log( 'string' * "2" ); // NaN
+
+
