@@ -179,6 +179,52 @@ console.log( Number("68-58") ); // NaN
 console.log( parseInt("68-58") ); // 68
 console.log( parseFloat("68-58") ); // 68
 
+//Numer con booleanos
+console.log( Number( true ) ); // 1
+console.log( Number( false ) ); // 0
+
+console.log( Number( [] ) ); // 0
+console.log( Number( [30] ) ); // 30
+console.log( Number( [30,40] ) ); // NaN
+
+// --- Conversión de tipo Boolean ---
+// En la conversión a boolean los siguientes valores son false:
+// ""(empty string), 0, NaN, null, undefined
+console.log( Boolean(1) ); // true
+console.log( Boolean(10000) ); // true
+console.log( Boolean(-1000) ); // true
+console.log( Boolean(0) ); // false
+console.log( Boolean(NaN) ); // false
+
+console.log( Boolean("") ); // false
+console.log( Boolean(" ") ); // true
+console.log( Boolean("1") ); // true
+console.log( Boolean("0") ); // true
 
 
+//Conversion explicita a String
+console.log( String(123) ); // "123"
+console.log( String(12.34) ); // "12.34"
+console.log( "Mi numero es " + 12.34); // "Mi numero es 12.34" //Ejemplo de conversion explicita a string de Buena Practica
+console.log("Mi numero es " + String(12.34)); // "Mi numero es 12.34" 
+  //A veces no es necesario convertir a string, JS lo hace automaticamente, es sobreexplicar y no es buena practica
+console.log( String(true) ); // "true"
+console.log( String(false) ); // "false"
 
+
+//De objeto a fortmato JSON: texto plano
+
+
+// Resumen:
+
+// Number()
+// [] (empty array) -> 0, [30]-> 30, [30,30]->NaN, false-> 0, true-> 1
+
+// String()
+// [] -> "", [12,2]->"12,2", function(){}-> "function(){}"
+// {} ->"[object,object]", {clave:valor, age:17} ->"[object,object]"
+
+// Para convertir un objeto a string, la forma correcta es usar
+// el método JSON.stringyfy( objeto );
+
+// Resumen : https://www.w3schools.com/js/js_type_conversion.asp
