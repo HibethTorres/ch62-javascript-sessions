@@ -100,6 +100,7 @@ console.log( `MAX_SAFE_INTEGER + 5: ${Number.MAX_SAFE_INTEGER + 5 }`); // 900719
 
 */
 const myBigInt = 9007199254740991n; // Nota la 'n' al final para indicar que es un BigInt: valores numericos enteros
+//Los  numeros pueden ser muy grandes, el limite es la memoria RAM del sistema
 console.log( typeof myBigInt ); // bigint
 console.log( `Resultado de myBigInt + 1n: ${ myBigInt + 1n }`); // 9007199254740992
 console.log( `Resultado de myBigInt + 2n: ${ myBigInt + 2n }`); // 9007199254740993
@@ -107,3 +108,23 @@ console.log( `Resultado de myBigInt + 3n: ${ myBigInt + 3n }`); // 9007199254740
 console.log( `Resultado de myBigInt + 4n: ${ myBigInt + 4n }`); // 9007199254740995
 console.log( `Resultado de myBigInt + 5n: ${ myBigInt + 5n }`); // 9007199254740996
 console.log( `Resultado de myBigInt + 6n: ${ myBigInt + 6n }`); // 9007199254740997
+console.log(typeof (myBigInt + 6n) ); // bigint
+
+
+/* ================================================================
+   4. DATOS PRIMITIVOS: BOOLEAN, NULL, UNDEFINED
+   ================================================================
+   - Boolean: true / false (Lógica binaria) //Las variables pueden comenzar con is o has para indicar que son booleanas
+   - Undefined: Variable declarada pero sin valor asignado (automático).
+   - Null: Ausencia intencional de valor (asignado por el dev).
+*/
+let currentTask; 
+console.log(`Valor de currentTask: ${currentTask}`); // undefined
+
+currentTask = "Iniciar sesión";
+console.log(`Valor de currentTask: ${currentTask}`); // Iniciar sesión //Tipo de dato String pero valor es "Iniciar sesión"
+
+currentTask = null;
+console.log(`Valor de currentTask: ${currentTask}`); // null
+
+
