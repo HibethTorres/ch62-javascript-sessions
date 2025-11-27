@@ -129,3 +129,20 @@ console.log(calcularAreaRectangulo()); //8 //Usa los valores por defecto 4 y 2
 console.log(calcularAreaRectangulo(7)); //14 //Usa 7 y el valor por defecto 2
 
 
+//Ejemplo de uso de default parameters en funciones declaradas
+console.log( `Vales 1000, estoy diciendo que vales: ${parseInt("1000", 10)}` ); //1000
+console.log( `Vales 1000 base 2, estoy diciendo que vales: ${parseInt("1000", 2)}` ); //8, porque 1*2^3 + 0*2^2 + 0*2^1 + 0*2^0 = 8
+console.log( `Vales 1000 base por defecto, estoy diciendo que vales: ${parseInt("1000")}` ); //1000, porque el parametro radix toma el valor por defecto de 10
+
+
+/*
+  Pase de datos:
+  - Por valor (tipos primitivos: number, string, boolean, null, undefined, symbol, bigint) /Es una copia del valor mismo
+    Se crea una copia independiente del dato. Si modificas la copia, el original NO cambia.
+  - Por referencia (objetos(no primitivos)): arrays, funciones, objetos literales) /No se pasa una copia, sino una referencia a la ubicación en memoria del objeto, lo que ocurra dentro de la referenia afecta al objeto original
+  Se pasa la dirección de memoria (referencia), no el dato en sí. Si modificas algo a través de esa referencia, el original SÍ cambia.
+*/
+
+
+
+
