@@ -1,4 +1,4 @@
-console.log ("JS02");
+console.log ("JS-02 funciones");
 
 /*
  Las funciones permiten organizar, reutilizar y 
@@ -67,7 +67,6 @@ sintaxis:
 
 //Funcion y metodo son sinonimos, al menos en JavaScript. 
 
-console.log(printFullName("Johan", "Gonzalez")); //Llamado a la funcion expresada
 
 
 /**    Comentario de funcion: debe ser con /**
@@ -83,4 +82,50 @@ const printFullName = function (firstName, lastName) {  //Declaramos la variable
   //Si la variable contiene otra funcion llevara const en lugar de let
   return `${firstName} ${lastName} estudiante de la Ch62`; //String template literal
 };  //Este tipo de funciones terminan en punto y coma, no es obligatorio pero es buena practica
+
+console.log(printFullName("Johan", "Gonzalez")); //Llamado a la funcion expresada
+
+/*
+ ------------ Funciones flecha -----------------------
+             (arrow functions)
+Funciones similares a las funciones expresadas pero:
+ - No requiere la palabra reservada function
+ - !!! Si tiene una sola instrucción no requiere las llaves {}
+ - !!! Si la instrucción es el mismo retorno, no requiere la palabra return, porquue esta misma funcion retorna el resultado de la expresión.
+
+sintaxis:
+    const nombreVariable = (parametros) => instrucción;   //Si y solo si tienes 1 parametro puedes no poner los paréntesis, si tienes 0 o 2 o mas, debes usarlos
+
+    const nombreVariable = (parametros) => {
+        instrucción;
+        return expresión;
+    }
+*/
+
+//Convertir la funcion printFullName a funcion flecha
+
+const printFullNameArrow = (firstName, lastName) => `${firstName} ${lastName} estudiante de la Ch62 con funcion flecha`;
+
+/*
+ ------------ Parámetros por defecto -----------------------
+             (default parameters)
+Inicializa un parámetro de la función, si no se envía el argumento cuando se invoca
+
+*/
+
+const makeCoffe = ( type = "Americano" ) => `Preparando un café ${type}`; //Si no se le pasa ningun argumento, el tipo de cafe sera Americano, por ende sera tipo string
+
+console.log( makeCoffe("Latte") ); // Preparando un café Latte
+console.log( makeCoffe() ); // Preparando un café undefined //Porque no se le indico ningun valor/argumento, por ende no tiene tipo y sale undefined
+
+
+// TODO: generar una función que calcule el área de un rectángulo
+// usando parámetros por defecto para largo y ancho.
+
+const calcularAreaRectangulo = (base = 4, altura = 2) => base * altura;
+
+console.log(calcularAreaRectangulo(5,3)); //15 //Se asignan nuevos valores 5 y 3, sobreescribiendo los valores por defecto
+console.log(calcularAreaRectangulo()); //8 //Usa los valores por defecto 4 y 2
+console.log(calcularAreaRectangulo(7)); //14 //Usa 7 y el valor por defecto 2
+
 
