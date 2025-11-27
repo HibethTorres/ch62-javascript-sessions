@@ -58,8 +58,29 @@ Son funciones declaradas dentro de la asignación de una variable.
 Estas funciones pueden ser anónimas ( no tienen nombre ).
 Las funciones expresadas no tiene hoisting, porque no se
 carga en memoria hasta que se utilice.
+
 sintaxis:
     const nombreVariable = function nombreFuncion (parámetros){
         instrucciones;
     };
 */
+
+//Funcion y metodo son sinonimos, al menos en JavaScript. 
+
+console.log(printFullName("Johan", "Gonzalez")); //Llamado a la funcion expresada
+
+
+/**    Comentario de funcion: debe ser con /**
+ * Funcion que recibe nombre y apellido y retorna el nombre completo
+ * @param {string} firstName - El primer nombre de la persona.
+ * @param {string} lastName - El apellido de la persona.
+ * @returns concatenación de firstName y lastName de la persona en la Ch62.
+ * No es necesario poner comentario de la funcion, pero es buena practica
+*/
+
+
+const printFullName = function (firstName, lastName) {  //Declaramos la variable y asignamos la función
+  //Si la variable contiene otra funcion llevara const en lugar de let
+  return `${firstName} ${lastName} estudiante de la Ch62`; //String template literal
+};  //Este tipo de funciones terminan en punto y coma, no es obligatorio pero es buena practica
+
