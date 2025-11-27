@@ -144,5 +144,52 @@ console.log( `Vales 1000 base por defecto, estoy diciendo que vales: ${parseInt(
 */
 
 
+/*
+ ------------ Funciones de Callback -----------------------
+ Es una función(definida, expresada, arrow, anónima) que se pasa 
+ a otra función como argumento.
+ Se pasa en el argumento como referencia ( sin parentesis).
+*/
 
+// Mal diseño: Cada vez que quieras una operación nueva, modificas esta función.
+const calculateBad = (a, b, type) => {
+    if (type === "sum") return a + b;
+    if (type === "subtract") return a - b;
+    // Si quiero dividir, tengo que editar este archivo y agregar otro if...
+};
+
+console.log( calculateBad(5, 3, "sum") ); // 8
+console.log( calculateBad(5, 3, "subtract") ); // 2
+
+// Aplicando funciones de callback para mejorar el diseño
+// 1. La funcion principal esta "cerrada" (no la tocamos mas)
+
+const calculate = (a, b, operationFunction) => {
+    return operationFunction(a, b); // Llamamos a la función pasada como argumento
+};
+
+//console.log(`Usando incorrectamente la funcion calculate: ${calculate(5, 3, 10)}`); // Usando incorrectamente la funcion calculate: NaN porque 10 no es una funcion
+
+// 2.Deifinimos operaciones basicas como funciones separadas
+const subtract = (a, b) => a - b;
+const add = (a, b) => a + b;
+const multiply = (a, b) => a * b;
+const divide = (a, b) => a / b;
+
+//Aplicar a la función calculate la función subtract como callback
+console.log(`Realizando una resta: ${calculate(5, 3, subtract)}`); // Realizando una resta: 2 //Si usamos parentesis en subtract(), se ejecuta inmediatamente y no funciona como callback
+// Aplicar a la función calculate la función multiplicacion como callback
+console.log(`Realizando una multiplicación: ${calculate(5, 3, multiply)}`); // Realizando una multiplicación: 15
+// Aplicar a la función calculate la función suma como callback
+console.log(`Realizando una suma: ${calculate(5, 3, add)}`); // Realizando una suma: 8
+// Aplicar a la función calculate la función división como callback
+console.log(`Realizando una división: ${calculate(6, 3, divide)}`); // Realizando una división: 2
+
+//Aplicar una funcion que calcule la potencia de un numero
+console.log(`Realizando una potencia: ${calculate(6, 3, (a, b) => a ** b)}`); // Realizando una potencia: 8 //Usando funcion anonima como callback
+ //Tambien podemos usar Math.pow(a,b) //No se ejecuta, solo se pasa la referencia/se define
+
+// Aplicar una función que calcule el residuo de una división, para saber si 6 es divisible entre 3
+console.log(`Realizando una operación de residuo: ${calculate(6, 3, (a, b) => a % b)}`); // Realizando una operación de residuo: 0
+// Si el resultado es 0, significa que 6 es divisible entre 3
 
