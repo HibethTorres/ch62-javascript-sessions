@@ -171,8 +171,8 @@ const calculate = (a, b, operationFunction) => {
 //console.log(`Usando incorrectamente la funcion calculate: ${calculate(5, 3, 10)}`); // Usando incorrectamente la funcion calculate: NaN porque 10 no es una funcion
 
 // 2.Deifinimos operaciones basicas como funciones separadas
-const subtract = (a, b) => a - b;
-const add = (a, b) => a + b;
+const subtract = (a, b) => a - b; //La variable a es diferente a la variable a de add, es como una caja negra independiente
+const add = (a, b) => a + b; //Una vez terminada la funcion, las variables a y b dejan de existir
 const multiply = (a, b) => a * b;
 const divide = (a, b) => a / b;
 
@@ -193,3 +193,27 @@ console.log(`Realizando una potencia: ${calculate(6, 3, (a, b) => a ** b)}`); //
 console.log(`Realizando una operación de residuo: ${calculate(6, 3, (a, b) => a % b)}`); // Realizando una operación de residuo: 0
 // Si el resultado es 0, significa que 6 es divisible entre 3
 
+var a = 10;  //variable global, no variable de funcion
+let b = 20;
+const c = 30;
+const d = 40;
+const e = 50;
+const f = 60;
+const g = 70; //El alcance de esta variable es global, entra en la funcion cambiarValores porque no hay otra variable g dentro de la funcion
+
+const cambiarValores = (a, b, c) => {  //No confundir, aunque se llamen igual, estas variables a,b,c son locales a la funcion cambiarValores, no son las mismas que las globales declaradas arriba
+
+  /*
+
+  Muchas instrucciones
+
+  */
+    a = 100; //Cambia solo la copia local, no la variable global
+    b = 200; //Cambia solo la copia local, no la variable global
+    c = 300; //Cambia solo la copia local, no la variable global
+    var d = 400; //Variable local a la funcion
+    let e = 500; //Variable local a la funcion
+    const f = 600; //Variable local a la funcion
+    console.log (a,b,c);
+
+};
