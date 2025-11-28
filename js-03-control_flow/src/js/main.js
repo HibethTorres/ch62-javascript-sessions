@@ -52,6 +52,8 @@ if (isActive === true) console.log("El usuario está activo"); //Si la condició
 if (isActive)  { //No es necesario comparar con true, ya que isActive ya es un valor booleano
     console.log("El usuario está activo");  //Esta es la mejor versión de estilo segun las guías de estilo
                                             //Usar las llaves nos puede ayudar a evitar errores en el futuro
+} else { //else tampoco necesita llaves, ya que no tiene una condición, pero es recomendable usarlas por legibilidad
+    console.log("El usuario no está activo"); 
 } 
 
 /*
@@ -89,3 +91,27 @@ console.log(alias); //Se imprime "Serchmo" porque alias fue declarada con var y 
 //console.log(firstName); //Error: firstName is not defined, porque firstName fue declarada con let y tiene alcance de bloque
 //console.log(lastName); //Error: lastName is not defined, porque lastName fue declarada con let y tiene alcance de bloque
 //console.log(age); //Error: age is not defined, porque age fue declarada con let y tiene alcance de bloque
+
+
+/*
+EJERCICIO:
+ Realizar una función (Arrow function) que reciba un número como valor de temperatura.
+ Si la temperatura es mayor a 25 grados, retornar "Hace calor".
+ En caso contrario, retornar "Hace frío".
+
+ Imprimir el valor del retorno por consola.
+*/
+const revisarTemperatura = (temperatura) => { //Arrow function
+    if (temperatura > 25) { //Si la temperatura es mayor a 25
+        return "Hace calor"; //retonar "Hace calor"
+    } else { //En caso contrario
+        return "Hace frío"; //retornar "Hace frío"
+    }   
+}
+console.log(revisarTemperatura(30)); //Imprimir el valor del retorno por consola (mayor a 25) //Imprime "Hace calor"
+console.log(revisarTemperatura(20)); //Imprimir el valor del retorno por consola (menor a 25) //Imprime "Hace frío"
+console.log(revisarTemperatura(25)); //Imprimir el valor del retorno por consola (igual a 25) //Imprime "Hace frío"
+
+//Otra forma de resolver el ejercicio usando operador ternario
+const revisarTemperaturaTernario = (temperatura) => 
+    temperatura > 25 ? "Hace calor" : "Hace frío"; //Operador ternario  
