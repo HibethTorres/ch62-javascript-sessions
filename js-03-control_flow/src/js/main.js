@@ -62,3 +62,30 @@ if (isActive)  { //No es necesario comparar con true, ya que isActive ya es un v
   //No nos hace conversiones de tipo implicitas
   !== Comparador estrictamente diferente que compara valor y tipo de dato //No nos hace conversiones de tipo implicitas
 */
+
+//Bloque de codigo: 
+//Conjunto de sentencias agrupadas entre llaves { ... }
+{
+    let firstName = "Juan";
+    let lastName = "Perez";
+    var alias = "Juampi"; //var tiene alcance global o de función, no de bloque
+    let age = 28;
+
+    console.log(firstName, lastName, alias); //Se imprime "Juan Perez Juampi"
+    {//Bloque anidado
+        let firstName = "Sergio";
+        let lastName = "Torres"; 
+        var alias = "Serch"; 
+        var alias = "Serchmo"; //Reasignación o redeclaracion de variable var
+        console.log(firstName, lastName, alias, age); //Se imprime "Sergio Torres Serchmo 28"
+        // porque las variables firstName y lastName son diferentes a las del bloque padre, 
+        //pero alias se sobreescribe porque es var
+    }
+    
+    console.log(firstName, lastName, alias, age); //Se imprime "Juan Perez Serchmo 28"
+
+}
+console.log(alias); //Se imprime "Serchmo" porque alias fue declarada con var y tiene alcance global o de función
+//console.log(firstName); //Error: firstName is not defined, porque firstName fue declarada con let y tiene alcance de bloque
+//console.log(lastName); //Error: lastName is not defined, porque lastName fue declarada con let y tiene alcance de bloque
+//console.log(age); //Error: age is not defined, porque age fue declarada con let y tiene alcance de bloque

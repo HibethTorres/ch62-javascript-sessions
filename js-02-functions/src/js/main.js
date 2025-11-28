@@ -216,4 +216,4 @@ const cambiarValores = (a, b, c) => {  //No confundir, aunque se llamen igual, e
     const f = 600; //Variable local a la funcion
     console.log (a,b,c);
 
-};
+}; 
