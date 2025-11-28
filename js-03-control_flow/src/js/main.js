@@ -115,3 +115,33 @@ console.log(revisarTemperatura(25)); //Imprimir el valor del retorno por consola
 //Otra forma de resolver el ejercicio usando operador ternario
 const revisarTemperaturaTernario = (temperatura) => 
     temperatura > 25 ? "Hace calor" : "Hace frío"; //Operador ternario  
+
+
+/*
+Realizar una funcion (Arrow function) que reciba el valor booleano de si una persona esta feliz o no
+Si la persona esta feliz, mostrar en la interfaz de usuario la imagen "public/images/dino.jpg"
+En caso contrario, mostrar la imagen "public/images/dino-emo.png"
+*/
+
+
+
+//if-else-if
+const checkTemperature = (temperature) => {
+    let message = "";
+  if (temperature > 30) {
+    message = "It's hot";
+} else if (temperature >= 15 && temperature <= 30) { 
+    message = "It's warm";
+} else if (temperature < 15 && temperature >= 0){
+    message = "It's cold";
+} else {
+    message = "It's freezing";
+}
+    return message;
+};
+
+console.log(checkTemperature(35)); //Imprime "It's hot"
+console.log(checkTemperature(20)); //Imprime "It's warm"
+console.log(checkTemperature(10)); //Imprime "It's cold"
+console.log(checkTemperature(-5)); //Imprime "It's freezing"
+
