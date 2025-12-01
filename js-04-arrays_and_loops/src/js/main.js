@@ -13,7 +13,7 @@ console.log("Sesion JS-04: Arrays y Bucles");
 */
 
 
-const myArray = [true, 42, "Hola", null, {"nombre: Juan"}, [1,2,3]];
+//const myArray = [true, 42, "Hola", null, {"nombre:Juan"}, [1,2,3]];
 
 // --- 1. Definicion ---
 // Sintaxis moderna: Usamos corchetes [] (Array Literal)
@@ -38,4 +38,19 @@ const numbers = new Array(5); //Array with 5 empty slots
 const techStack = ["HTML", "CSS", "JavaScript"];
 
 //Acceder al primer elemento
+console.log( techStack.length ); //3
 console.log(`Accediendo al primer elemento: ${techStack[0]}`); //"HTML"
+
+//Accediento al segundo elemento
+console.log(`Accediendo al segundo elemento: ${techStack[1]}`); //"CSS"
+
+//Accediento al ultimo elemento (length - 1)
+console.log(`Accediendo al ultimo elemento: ${techStack[techStack.length - 1]}`); //"JavaScript"
+
+// --- 3.Modificacion de Elementos ---
+techStack [1] = "Sass"; //Cambiando "CSS" por "Sass"
+console.log("Después de la modificación:", techStack); // ["HTML", "Sass", "JavaScript"]
+
+//Agregar un nuevo elemento al final
+//teckStack[3]
+techStack[techStack.length] = "Typescript"; // ["HTML", "Sass", "JavaScript", "TypeScript"]
