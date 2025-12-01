@@ -54,3 +54,22 @@ console.log("Después de la modificación:", techStack); // ["HTML", "Sass", "Ja
 //Agregar un nuevo elemento al final
 //teckStack[3]
 techStack[techStack.length] = "Typescript"; // ["HTML", "Sass", "JavaScript", "TypeScript"]
+
+
+/* ================================================================
+   BLOQUE 2: MÉTODOS DE ARRAYS (Add/Remove) 
+   ================================================================
+   JavaScript nos da métodos para manipular la lista como una pila o cola.
+*/
+
+const shoppingList = ["Leche", "Huevos"];
+
+
+// 1.push(): Agrega al FINAL (El mas usado)
+// Retorna la nueva longitud del array
+shoppingList.push("Pan");
+console.log("Push:", shoppingList); // ["Leche", "Huevos", "Pan"]
+
+// 2. unshift(): Agrega al INICIO (Mueve todos los indices, es mas lento)
+shoppingList.unshift("Café");
+console.log("Unshift:", shoppingList); // ["Café", "Leche", "Huevos", "Pan"]
