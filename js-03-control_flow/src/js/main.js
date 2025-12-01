@@ -234,3 +234,33 @@ function getWeather(weatherCode) { //Funcion que recibe un código weatherCode
   }
 
 */
+
+const getAccessLevel = ( role ) => {
+    let accessLevel;
+    switch ( role ) {
+        case "super_admin": //Si role es igual a "super_admin" 
+            accessLevel = "Acceso completo al sistema"; //Se asigna el valor a accessLevel
+            break; //Palabra reservada para salir del switch, ya no se ejecutan más casos y brinca DE AQUI------
+            //En caso de que no tuvieramos el break, se ejecutarian todas las siguientes sentencias hasta encontrar un break o finalizar el switch
+            //Solo se evaluaría el primer case, los demás no se evaluarían
+        case "admin":
+            accessLevel = "Acceso completo al sistema"; //Se asigna el valor a accessLevel
+            break; //Palabra reservada para salir del switch, ya no se ejecutan más casos y brinca DE AQUI------
+        case "editor":
+            accessLevel = "Acceso para editar contenido";
+            break;  
+        case "viewer":
+            accessLevel = "Acceso solo para ver contenido";
+            break;
+        default:
+            accessLevel = "Acceso denegado";
+    } //-------HASTA AQUI
+    return accessLevel;
+};
+console.log( getAccessLevel("admin") ); //
+// Parametro es aquel definido para la funcion por ejemplo sumar(a,b) a y b son parámetros
+// En cambio argumento es el valor en si pasado por ejemplo sumar(1,2) o la entrada del usuario Argumento es el valor
+// Parámetro marca dónde (su nombre) y argumento el valor mismo
+console.log( getAccessLevel("editor") ); // Imprime "Acceso para editar contenido"
+console.log( getAccessLevel("super_admin") ); // Imprime "Acceso completo al sistema"
+console.log( getAccessLevel("customer") ); // Imprime "Acceso denegado" ya que no existe el case "customer"
