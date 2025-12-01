@@ -235,6 +235,11 @@ function getWeather(weatherCode) { //Funcion que recibe un código weatherCode
 
 */
 
+/**
+ * Switch case con el patron "Single Entry, Single Exit"
+    * Realizar una función que reciba un rol de usuario
+ */
+
 const getAccessLevel = ( role ) => {
     let accessLevel;
     switch ( role ) {
@@ -264,3 +269,76 @@ console.log( getAccessLevel("admin") ); //
 console.log( getAccessLevel("editor") ); // Imprime "Acceso para editar contenido"
 console.log( getAccessLevel("super_admin") ); // Imprime "Acceso completo al sistema"
 console.log( getAccessLevel("customer") ); // Imprime "Acceso denegado" ya que no existe el case "customer"
+
+
+/**
+    * Switch case con el patron "Early Return"
+ */
+const getAccessLevelWithEarlyReturn = ( role ) => {
+    
+    switch ( role ) {
+        case "super_admin": 
+        case "admin":
+            return "Acceso completo al sistema"; 
+        case "editor":
+            return "Acceso para editar contenido";
+        case "viewer":
+            return "Acceso solo para ver contenido";
+        default:
+            return "Acceso denegado";
+    } 
+};
+
+console.log( getAccessLevel("admin") ); // Acceso completo al sistema
+console.log( getAccessLevel("super_admin") ); // Acceso completo al sistema
+console.log( getAccessLevel("editor") ); // Acceso para editar contenido
+console.log( getAccessLevel("customer") ); // Acceso denegado
+
+
+/*
+Refactorizar la función getWeather usando switch-case 
+*/
+
+
+/*
+const getWeather=(codigo)=>{
+     let message;
+    if(codigo===0){
+        message="Clear Sky";
+    }else if( codigo===1 ||codigo===2 ||codigo===3  ){
+        message="Mainly clear, partly cloudy, and overcast";
+    }else if(codigo===45 || codigo===48){
+        message="Fog and depositing rime fog";
+    }else{
+        message="no definido";
+    }
+    return message;
+   
+}
+*/
+
+const getWeatherSwitch=(codigo)=>{
+    switch(codigo){
+        case 0:
+            return "Clear Sky";
+        case 1:
+            return "Mainly clear"
+        case 2:
+            return "Partly cloudy"
+        case 3:
+            return "Overcast";
+        case 45:
+            return "Fog";
+        case 48:
+            return "Depositing rime fog";
+        
+        default:
+            return "no definido";
+    }
+}
+console.log(getWeatherSwitch(0)); //Imprime "Clear Sky"
+console.log(getWeatherSwitch(2)); //Imprime "Partly cloudy"
+console.log(getWeatherSwitch(45)); //Imprime "Fog"
+console.log(getWeatherSwitch(99)); //Imprime "no definido"
+
+
