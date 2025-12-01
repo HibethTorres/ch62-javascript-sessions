@@ -73,3 +73,14 @@ console.log("Push:", shoppingList); // ["Leche", "Huevos", "Pan"]
 // 2. unshift(): Agrega al INICIO (Mueve todos los indices, es mas lento)
 shoppingList.unshift("Café");
 console.log("Unshift:", shoppingList); // ["Café", "Leche", "Huevos", "Pan"]
+
+// --- Eliminar Elementos ---
+
+// 3. pop(): Elimina el ÚLTIMO y lo devuelve
+const removedItem = shoppingList.pop();
+console.log(`Eliminado con pop: ${removedItem}`); // "Pan"
+console.log("Lista actual:", shoppingList);
+
+// 4. shift(): Elimina el PRIMERO y lo devuelve
+const firstRemoved = shoppingList.shift();
+console.log(`Eliminado con shift: ${firstRemoved}`); // "Café"
