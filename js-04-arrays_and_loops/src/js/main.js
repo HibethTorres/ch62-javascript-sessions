@@ -121,3 +121,73 @@ console.log("Despues de agregar con splice", colors.toString());
    manageGuestList();
 
 /* ================================================================ */
+
+/*================================================================
+   BLOQUE 3: ESTRUCTURAS DE DATOS - PILAS Y COLAS (Stack & Queue)
+   ================================================================
+   Las pilas y colas son estructuras de datos que organizan cómo se 
+   almacenan y acceden a los elementos.
+   1. LIFO (Last-In, First-Out) - Pila (Stack)
+   Concepto: El último elemento en entrar es el primero en salir.
+*/
+// Navegamos a sitios (push)
+const historyStack = [];
+
+historyStack.push("google.com");
+historyStack.push("youtube.com");
+historyStack.push("github.com");
+console.log("Historial actual:", historyStack); // ["google.com", "youtube.com", "github.com"]
+
+// Volvemos atrás (pop)
+console.log(`Volviendo a: ${historyStack.pop()}`); // "github.com"
+console.log("Historial después de pop:", historyStack); // ["google.com", "youtube.com"]
+/* ================================================================
+   2. FIFO (First-In, First-Out) - Cola (Queue)
+   Concepto: El primer elemento en entrar es el primero en salir.
+*/
+//Lista de documentos para imprimir (push)
+const printQueue = [];
+printQueue.push("thesis.pdf");
+printQueue.push("meme.png");
+printQueue.push("invoice.docx");
+console.log("Cola de impresión:", printQueue); // ["thesis.pdf", "meme.png", "invoice.docx"]
+// La impresora termina el primer trabajo (shift)
+const printingNow = printQueue.shift();
+console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó)
+console.log("Cola de impresión después de shift:", printQueue); // ["meme.png", "invoice.docx"]
+
+/* ================================================================
+ Ejercicio:
+   Crea un array llamado 'taskList' para gestionar tareas.
+   1. Agrega 3 tareas usando 'push'.
+   2. Muestra la lista completa de tareas.
+   3. Las tareas normales se atienden en orden de llegada (FIFO)
+   3.1 Retira (elimina) la primera tarea de la lista y muéstrala.
+   4. No dan un tarea URGENTE que debe ser atendido inmediatamente.
+    Por lo que debes poner al inicio de la lista.
+   5. Muestra la lista actualizada.
+   6. Atiende (elimina) la primera tarea de la lista y muéstrala.
+*/
+
+const taskList = []; //1. Crear array vacío
+//2. Agregar 3 tareas
+taskList.push("Tarea 1: Organizar los archivos");
+taskList.push("Tarea 2: Enviar correos");
+taskList.push("Tarea 3: Preparar presentación");
+console.log("Lista completa de tareas:", taskList.join(' | ')); //3. Mostrar lista completa
+// "Lista completa de tareas: Tarea 1: Organizar los archivos | Tarea 2: Enviar correos | Tarea 3: Preparar presentación"
+//3.1 Retirar la primera tarea (FIFO)
+const firstTask = taskList.shift(); //shift: Eliminar el primero
+console.log("Lista completa de tareas:", taskList.join(' | ')); // "Lista completa de tareas: Tarea 2: Enviar correos | Tarea 3: Preparar presentación"
+// 4. Agregar tarea urgente al inicio
+taskList.unshift("Tarea Urgente: Revisar reportes financieros"); //unshift: Agregar al inicio
+//5. Mostrar lista actualizada
+console.log("Lista actualizada de tareas:", taskList.join(' | '));
+// "Lista actualizada de tareas: Tarea Urgente: Revisar reportes financieros | Tarea 2: Enviar correos | Tarea 3: Preparar presentación"
+//6. Atender la primera tarea
+const urgentTask = taskList.shift(); //shift: Eliminar el primero
+console.log(`Atendiendo: ${urgentTask}`); // "Atendiendo: Tarea Urgente: Revisar reportes financieros"
+console.log("Lista completa de tareas:", taskList.join(' | ')); 
+// "Lista completa de tareas: Tarea 2: Enviar correos | Tarea 3: Preparar presentación"
+
+/* =========================THE END============================== */
