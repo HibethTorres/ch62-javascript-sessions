@@ -191,3 +191,121 @@ console.log("Lista completa de tareas:", taskList.join(' | '));
 // "Lista completa de tareas: Tarea 2: Enviar correos | Tarea 3: Preparar presentación"
 
 /* =========================THE END============================== */
+
+/* ================================================================
+   BLOQUE 3: BUCLES (LOOPS) 
+   ================================================================
+   Estructuras que repiten un bloque de código mientras una condición sea verdadera.
+*/
+
+// --- 1. Ciclo FOR (Controlado) ---
+// Úsalo cuando sabes cuántas veces quieres repetir algo (ej. recorrer un array).
+// Sintaxis: for (expresión_inicial; condición; expresión_final) { ... }
+
+// Imprimier los números del 1 al 5
+//          1     2     4
+for(let i = 1; i <=5 ; i++ ) { //i de iteración
+//       3    
+   console.log(`Número ${i}`); // "1, 2, 3, 4, 5"
+
+}
+
+// -------------Uso del break en ciclos-------------
+//break detiene la ejecución de la iteracion en curso y termina el ciclo
+
+for (let i = 1; i <= 10; i++) {
+   if (i === 6) {
+      console.log("Se alcanzó el valor 6, saliendo del ciclo.");
+      break; // Sale del ciclo cuando i es 6
+   }
+     console.log(`(con break) Número ${i}`); // Imprime números del 1 al 5
+} 
+
+// ============Ejercicios mentales=============
+let interacion = 0
+
+for (  ;  ;  ){ //No se debe hacer pero es valido
+//for (true;true;true){
+    console.log(`Núm de interación: ${interacion}` ); // "0,1,2,3,4"
+    interacion++;
+    if( interacion === 5 ){
+        break; //Es de suma importancia para no crear un bucle infinito
+    }
+}
+
+// =====================================================
+let myIteration; 
+
+for (myIteration = 0; myIteration <= 5; myIteration++) {
+    console.log("For loop", myIteration ); // 0 , 1, 2
+     if( myIteration === 2) break;  
+}
+console.log("Final", myIteration); //  2
+
+// =====================================================
+let jiteration;
+
+for ( jiteration = 0; jiteration < 3; jiteration++ ) {
+   console.log("For loop", jiteration ); // 0, 1, 2
+
+}
+console.log("Final", jiteration); //  3
+
+// ======================================================
+
+let k;
+for ( k = 0; k < 5; k++ )    ; //El punto y coma al final del for crea un ciclo vacio y luego ejecuta el bloque
+
+//Esta parte es independiente, solo un bloque de codigo
+{ 
+   console.log("Valor de", k ); // 5
+}
+console.log("Final", k ); // 5
+
+
+// break: Termina completamente un bucle (for, while, switch, etc.)
+// continue: Salta la iteracion actual y continua con la siguiente sin salir del bucle
+
+for (let n = 1; n <= 5; n++) {
+   if (n === 3) { continue;
+      console.log("Estoy dentro del ciclo for"); //No se ejecuta cuando n es 3
+      console.log("Valor de n:", n ); // 1,2,4,5
+   }
+}
+
+// --- 2. Ciclo WHILE (Basado en condición) ---
+// Úsalo cuando NO sabes cuántas veces se repetirá, depende de algo externo.
+// Cuidado: Si la condición nunca es falsa, creas un bucle infinito (Infinite Loop).
+
+
+/*
+while(  confirm("¿Quieres tu número de la suerte")  ){
+    const numeroSuerte = Math.random(); // 0....1.0(sin incluir 1.0)
+    console.log("Tu número de la suerte es: " + numeroSuerte);
+}
+console.log("Gracias por participar");
+*/
+
+//Imprimir los numeros del 1 al 5 usando while
+let m = 1; //Inicialización
+
+while ( m <=5 ) { //Condicion
+   console.log(`Número ${m}`); // "1, 2, 3, 4, 5"
+   m++; //Actualización
+   //Si no se actualiza m, el ciclo nunca termina (bucle infinito)
+}
+
+// =============================================
+
+const countries = ["Mexico", "USA", "Canada", "Japon"];
+//Usando FOR LOOP
+for (let index = 0; index < countries.length; index++) {
+   const element = countries[index];
+   console.log(`(for) Pais en indice ${index}: ${element}`); // Pais en indice 0: Mexico, Pais en indice 1: USA, Pais en indice 2: Canada, Pais en indice 3: Japon
+}
+//Si necesito el indice es mejor usar for tradicional
+
+//Usando For OF (ES6+)
+for (const country of countries) {
+   console.log(`(for of) Pais: ${country}`); // Pais: Mexico, Pais: USA, Pais: Canada, Pais: Japon
+} //Si solo necesito el valor y no el indice, es mas sencillo usar for of
