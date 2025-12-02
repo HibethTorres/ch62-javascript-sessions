@@ -328,3 +328,10 @@ let totalBalance = 0;
       totalBalance += amount; // += es equivalente a totalBalance = totalBalance + amount
 }// 3. Imprimir el balance final
 console.log(`El balance final es: $${totalBalance}`); // "El balance final es: $650.00"
+
+
+//Usando FOR-EACH
+transactions.forEach( (transaction, index, array)=> totalBalance += transaction ); //No es olbigatorio usar los 3 parametros
+console.log(`(forEach) El balance final es: $${totalBalance}`); // "El balance final es: $650.00"
+
+/* =========================THE END============================== */
