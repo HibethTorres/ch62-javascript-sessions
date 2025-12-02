@@ -309,3 +309,22 @@ for (let index = 0; index < countries.length; index++) {
 for (const country of countries) {
    console.log(`(for of) Pais: ${country}`); // Pais: Mexico, Pais: USA, Pais: Canada, Pais: Japon
 } //Si solo necesito el valor y no el indice, es mas sencillo usar for of
+
+
+
+// =============================================
+
+// TODO: RETO FINAL (Simulación de Cajero)
+// Tienes un array de movimientos: [100.00, -50.00, 200.00, -100.00]
+// 1. Usa un ciclo FOR, o WHILE o FOR-OF para recorrer los movimientos.
+// 2. Suma los valores a una variable 'totalBalance'.
+// 3. Imprime el balance final.
+
+const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
+let totalBalance = 0;
+// 1. Usando FOR-OF
+   for (const amount of transactions) {
+      //2. Sumar los valores a totalBalance
+      totalBalance += amount; // += es equivalente a totalBalance = totalBalance + amount
+}// 3. Imprimir el balance final
+console.log(`El balance final es: $${totalBalance}`); // "El balance final es: $650.00"
