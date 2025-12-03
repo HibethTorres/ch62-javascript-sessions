@@ -1,1 +1,6 @@
-document.getElementById("title").innerText = "OOP in JavaScript, Cohorte 62";
+//Las importaciones van al inicio del archivo
+//Importacion nombrada
+
+import { changePrincipalTitle } from "./modules/changePrincipalTitle.js"; //No olvidar agregar la extension .js
+
+changePrincipalTitle("title");

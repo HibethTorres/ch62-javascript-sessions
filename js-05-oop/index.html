@@ -100,11 +100,19 @@
         de funciones, objetos o valores entre archivos, facilitando la 
         modularización del código. -->
         
-        <script>
+    <script type="module" src ="./src/js/main.js"></script>
+
+    <!-- <button onclick=" alert(participants)"> Show Participants</button>
+         //ここから: Script interno 
+        <script>  
             console.log("Index.html loaded");
-        </script>
+            const participants = ["Alice", "Bob", "Charlie"]; // Array para almacenar los participantes registrados
+        
+        </script>  //ここまで: Script interno 
         <script src="./src/js/main.js" defer></script> 
-    <!-- Con defer ,se carga en memoria pero no se ejecuta hasta que el HTML esté completamente parseado -->
-    </body>
+        //Script externo
+        //Con defer ,se carga en memoria pero no se ejecuta hasta que el HTML esté completamente parseado -->
+    
+</body>
     
     </html>
