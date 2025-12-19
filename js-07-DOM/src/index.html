@@ -1,23 +1,42 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Vite</title>
-    <script type="module" src="./js/main.js"></script>
-  </head>
-  <body>
-    <header id="main-header">
 
-    </header>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap w/ Vite</title>
+  <script type="module" src="./js/main.js"></script>
+</head>
 
-    <div class="container py-4 px-3 mx-auto">
+<body>
+  <header id="main-header">
+
+  </header>
+
+  <div class="container py-4 px-3 mx-auto">
     <h1 class="bg-warning text-info">Hello, Bootstrap and Vite!</h1>
-      <button class="btn btn-primary">Primary button</button>
-      <button class="btn btn-secondary">Secondary button</button>
-      <button class="btn btn-success">Success button</button>            
-      <button class="btn btn-warning">Warning button</button>
-    
-    </div>
-  </body>
+    <button class="btn btn-primary">Primary button</button>
+    <button class="btn btn-secondary">Secondary button</button>
+    <button class="btn btn-success">Success button</button>
+    <button class="btn btn-warning">Warning button</button>
+
+
+
+    <main class="container" id="main-secction">
+      <div class="row">
+        <div class="col-6 d-none d-md-block">
+          <img src="/img/tigger.png" alt="" id="principal-img" class="img-fluid">
+        </div>
+        <div class="col-6">
+          <form class="row" id="task-form">
+            <input type="text" class="form-control" name="taskTitle" id="taskTitle" placeholder="Nueva tarea">
+            <button type="submit" class="btn btn-warning">Agregar Tarea</button> <!-- Usar submit, boton de type submit -->
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</body>
+
 </html>

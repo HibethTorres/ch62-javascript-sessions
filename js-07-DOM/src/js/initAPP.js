@@ -1,5 +1,6 @@
 import navbarContent from "./components/navbar"; // importanción por default
 // import {navbar:navbarContent } from "./components/navbar"; // importanción nombrada
+import { setupEventListener } from "./components/setupEventListener"; // importanción nombrada
 
 
 const initAPP = () => {
@@ -7,6 +8,7 @@ const initAPP = () => {
     //Obtener la referencia al contenedor del navbar por su id
     const navbarContainer = document.getElementById("main-header");
     navbarContainer.innerHTML = navbarContent();
+    setupEventListener();
 
 
 };

@@ -37,7 +37,7 @@ Ciclo de vida: DOMContentLoaded asegura que los elementos existan
         cargado y parseado, sin esperar a que se carguen imágenes u otros recursos externos.  
   */
 
-window.addEventListener("load",initAPP());
+window.addEventListener("load",initAPP); /* Hacemos callback */
 /*
 1ro el nombre del evento
 2do la funcion que se va a ejecutar cuando se dispare el evento de callback
